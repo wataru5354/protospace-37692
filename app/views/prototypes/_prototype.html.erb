@@ -1,0 +1,12 @@
+<div class="card">
+  <%= link_to prototype_path(@prototypes.ids) do %> 
+    <%= image_tag prototype.image.variant(resize: '400x400'), class: :card__img if prototype.image.attached? %>
+  <% end %>
+  <div class="card__body">
+    <%= link_to "#{prototype.title}", prototype_path(@prototypes.ids), class: :card__title%>
+    <p class="card__summary">
+      <%= "#{prototype.catchcopy}" %>
+    </p>
+    <%= link_to "by #{prototype.user.name}", root_path, class: :card__user %>
+  </div>
+</div>
