@@ -3,7 +3,7 @@
     <div class="prototype__wrapper">
     <%= link_to '一覧に戻る' , root_path, class: :nav__btn %>
       <p class="prototype__hedding">
-        <%= "プロトタイプのタイトル"%>
+        <%= "#{@prototype.title}"%>
       </p>
       <%= link_to "by #{@prototype.user.name}", user_path(@prototype.user.id), class: :prototype__user %>
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
@@ -15,7 +15,7 @@
       <% end %>
       <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
       <div class="prototype__image">
-        <%= image_tag @prototype.image.variant(resize: '400x400'), class: :card__img if @prototype.image.attached? %>
+        <%= image_tag @prototype.image, class: :card__img %>
       </div>
       <div class="prototype__body">
         <div class="prototype__detail">
